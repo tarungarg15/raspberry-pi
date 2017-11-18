@@ -20,19 +20,21 @@ p
 n
 p
 1
-2048
-819199
+8192
+93596
 t
 b
 a
 n
 p
 
-
+94208
 
 w
 EEOF
 
+echo "wait for 10 seconds"
+sleep 10
 
 umount $1
 
@@ -44,9 +46,14 @@ read Boot_Partition
 
 umount $Boot_Partition
 
+echo "wait for 10 seconds"
+sleep 10
+
 echo "mkfs.vfat $Boot_Partition -n boot"
 su -c "mkfs.vfat $Boot_Partition -n boot"
 
+echo "wait for 10 seconds"
+sleep 10
 echo "Enter the root partition"
 
 read Root_Partition

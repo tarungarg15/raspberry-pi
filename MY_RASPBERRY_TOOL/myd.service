@@ -1,0 +1,18 @@
+[Unit]
+
+Description=NMEA
+
+After=rc-local.service
+
+Before=systemd-user-sessions.service
+
+ 
+
+[Service]
+Type=simple
+RemainAfterExit=true
+ExecStart=/bin/sh /home/pi/ble/bluez-5.44/NODE_JS/vibration.sh
+Environment=HOME=/home/pi/ble/bluez-5.44/NODE_JS/
+WorkingDirectory=/home/pi/ble/bluez-5.44/NODE_JS/
+[Install]
+WantedBy=multi-user.target
